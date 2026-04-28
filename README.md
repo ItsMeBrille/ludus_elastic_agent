@@ -72,7 +72,10 @@ ludus:
       snapshot: false
       block_internet: false
     roles:
-      - badsectorlabs.ludus_elastic_agent # role_vars are not required when using ludus
+      - name: badsectorlabs.ludus_elastic_agent # role_vars are not required when using ludus and badsectorlabs.ludus_ealstic_container
+        depends_on:
+          - vm_name: your_ealstic_container_vm_name
+            role: badsectorlabs.ludus_elastic_container
 ```
 
 Set the `role_vars` to install Elastic agent v8.X:
